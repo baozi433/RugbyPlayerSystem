@@ -46,11 +46,15 @@ namespace RugbyPlayerSystem.API.Repository
             var allPlayers = await _rugbyDbContext.Players.ToListAsync();
             var players = new List<Player>();
 
-            var dateNow = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            var dateNow = DateOnly.FromDateTime(DateTime.Now);
 
             foreach(Player p in allPlayers)
             {
-                if((dateNow - p.BirthDate) == age)
+                if ((dateNow.Year - p.BirthDate.Year == age) && (dateNow.Month >= p.BirthDate.Month) && (dateNow.Day >= p.BirthDate.Day))
+                {
+                    players.Add(p);
+                }
+                else if ((dateNow.Year - p.BirthDate.Year == age + 1) && (dateNow.Month <= p.BirthDate.Month) && (dateNow.Day < p.BirthDate.Day))
                 {
                     players.Add(p);
                 }
