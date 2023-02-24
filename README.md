@@ -5,7 +5,7 @@ The backend is RugbyPlayerSystem.API(ASP.NET Core Web API).
 
 In this Github repos, there is only one main branch(master). The code is built using visual studio 2022, click the .sln file to access the source code to build and run.\
 
-## CoffeeShop.Api
+## RugbyPlayerSystem.API
 This project is an ASP.NET Core Web API using .NET 7 Framework which references RugbyPlayerSystem.Models project and used the following packages:
 
 ### Packages:
