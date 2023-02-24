@@ -23,14 +23,13 @@ namespace RugbyPlayerSystem.API.Controllers
         {
             try
             {
-                var addedPlayer = await _playerRepository.AddPlayer(player);
-
-                if (addedPlayer == null)
+                if(player == null)
                 {
-                    return NoContent();
+                    return BadRequest("The player is null");
                 }
 
-                return Created("addplayer", addedPlayer);
+                var addedPlayer = await _playerRepository.AddPlayer(player);
+                return Ok(addedPlayer);
             }
             catch (Exception ex)
             {
@@ -107,7 +106,7 @@ namespace RugbyPlayerSystem.API.Controllers
 
 
         [HttpGet("get_players_by_team/{teamName}")]
-        public async Task<ActionResult<List<Player>>> GetPlayersByTeams(string teamName)
+        public async Task<ActionResult<List<Player>>> GetPlayersByTeam(string teamName)
         {
             try
             {

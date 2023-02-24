@@ -21,21 +21,21 @@ namespace RugbyPlayerSystem.API.Controllers
         {
             try
             {
+                if(team == null)
+                {
+                    return BadRequest("The team is null");
+                }
+
                 var checkTeam = await _teamRepository.GetTeam(team.Name);
 
                 if (checkTeam != null)
                 {
-                    return BadRequest($"The team {team.Name} has already registered");
+                    return Conflict($"The team {team.Name} already exists");
                 }
 
                 var addedTeam = await _teamRepository.AddTeam(team);
 
-                if(addedTeam == null)
-                {
-                    return NoContent();
-                }
-
-                return Created("addteam", addedTeam);
+                return Ok(addedTeam);
             }
             catch (Exception ex)
             {
