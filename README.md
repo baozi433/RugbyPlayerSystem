@@ -44,6 +44,6 @@ In the visual studio, click start to run.
 This project is a Class Library using .NET 7 Framework targets .NET or .NET Standard.
 There are three models: Player, Team, and Union. This project cannot be launched as a single startup project as it is a library.
 
-## CoffeeShop.Test
+## RugbyPlayerSystem.Test
 This is a xUnit test projects using packages FakeItEasy for unit test
 
