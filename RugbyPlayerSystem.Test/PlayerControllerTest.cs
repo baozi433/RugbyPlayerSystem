@@ -58,6 +58,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal("The player or Team does not exist", result.Value);
         }
 
         [Fact]
@@ -84,6 +85,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal("There is no player", result.Value);
         }
 
         [Fact]
@@ -97,6 +99,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal("The player does not exist", result.Value);
         }
 
         [Fact]
@@ -111,6 +114,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as BadRequestObjectResult;
             Assert.Equal(400, result.StatusCode);
+            Assert.Equal("The player has not yet signed to any team", result.Value);
         }
 
         [Fact]
@@ -136,6 +140,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as BadRequestObjectResult;
             Assert.Equal(400, result.StatusCode);
+            Assert.Equal("The team does not exist", result.Value);
         }
 
         [Fact]
@@ -175,6 +180,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal($"No player is {age} years old", result.Value);
         }
 
         [Fact]
@@ -206,6 +212,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal($"The coach {coach} does not exist in any teams", result.Value);
         }
 
         [Fact]
@@ -228,6 +235,7 @@ namespace RugbyPlayerSystem.Test
 
             var result = actionResult.Result as NotFoundObjectResult;
             Assert.Equal(404, result.StatusCode);
+            Assert.Equal($"There is no player in {coach}'s teams", result.Value);
         }
 
         [Fact]
