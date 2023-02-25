@@ -48,6 +48,21 @@ namespace RugbyPlayerSystem.Test
         }
 
         [Fact]
+        public async void Add_Team_Return_Ok()
+        {
+            var team = A.Fake<Team>();
+
+            A.CallTo(() => _teamRepository.GetTeam(team.Name)).Returns(Task.FromResult<Team>(null));
+            A.CallTo(() => _teamRepository.AddTeam(team));
+            var controller = new TeamController(_teamRepository);
+
+            var actionResult = await controller.AddTeam(team);
+
+            var result = actionResult.Result as OkObjectResult;
+            Assert.Equal(200, result.StatusCode);
+        }
+
+        [Fact]
         public async void Get_All_Teams_With_Null()
         {
             A.CallTo(() => _teamRepository.GetTeams()).Returns(Task.FromResult<List<Team>>(null));

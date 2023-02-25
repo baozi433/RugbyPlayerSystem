@@ -34,7 +34,7 @@ namespace RugbyPlayerSystem.Test
         }
 
         [Fact]
-        public async void Add_Player_Return_Created()
+        public async void Add_Player_Return_Ok()
         {
             var player = A.Fake<Player>();
             A.CallTo(() => _playerRepository.AddPlayer(player));
