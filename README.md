@@ -40,7 +40,8 @@ dotnet ef database update
 So, the database and tables have been setup, you can check the database either from visual studio or MS SQL server management studio to access the data.
 In the visual studio, click start to run.
 
-![SwaggerUI](https://user-images.githubusercontent.com/27320730/221338645-0f27474e-3e9e-48e8-8bd0-e859469c6e72.png)
+![SwaggerUI](https://user-images.githubusercontent.com/27320730/221345772-cb179698-8232-406d-993d-ecf237352a65.png)
+
 All the apis have been tested. Take add player for example:
 When use swagger to add new player, playerId in the following json format can be deleted as the system will asign a unique Id for each player. If you donot want to sign the player to a team when add a new player, just delete "teamName", you can then test other api(sign_player{playerId}_To/{teamName})
 
