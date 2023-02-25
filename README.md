@@ -40,6 +40,31 @@ dotnet ef database update
 So, the database and tables have been setup, you can check the database either from visual studio or MS SQL server management studio to access the data.
 In the visual studio, click start to run.
 
+![SwaggerUI](https://user-images.githubusercontent.com/27320730/221338645-0f27474e-3e9e-48e8-8bd0-e859469c6e72.png)
+All the apis have been tested. Take add player for example:
+When use swagger to add new player, playerId in the following json format can be deleted as the system will asign a unique Id for each player. If you donot want to sign the player to a team when add a new player, just delete "teamName", you can then test other api(sign_player{playerId}_To/{teamName})
+
+```
+{
+  "playerId": 0,
+  "name": "string",
+  "birthDate": "2023-02-25",
+  "height": 0,
+  "weight": 0,
+  "placeOfBirth": "string",
+  "teamName": "string"
+}
+
+{
+  "name": "test player",
+  "birthDate": "2000-02-25",
+  "height": 190,
+  "weight": 100,
+  "placeOfBirth": "Auckland"
+}
+
+```
+
 ## RugbyPlayerSystem.Models
 This project is a Class Library using .NET 7 Framework targets .NET or .NET Standard.
 There are three models: Player, Team, and Union. This project cannot be launched as a single startup project as it is a library.
