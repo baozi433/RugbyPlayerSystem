@@ -45,5 +45,11 @@ This project is a Class Library using .NET 7 Framework targets .NET or .NET Stan
 There are three models: Player, Team, and Union. This project cannot be launched as a single startup project as it is a library.
 
 ## RugbyPlayerSystem.Test
-This is a xUnit test projects using packages FakeItEasy for unit test
+This is a xUnit test projects using packages FakeItEasy for unit test.
+In this projects, there are two controller tests:
+* PlayerControllerTest
+* TeamControllerTest
+
+All apis' results and possible http responses are handled, and unit test are all passed.
+![Unit tests for API controllers](https://user-images.githubusercontent.com/27320730/221338133-dad33fa7-8e0c-4588-92a0-036f49d3785f.png)
 
